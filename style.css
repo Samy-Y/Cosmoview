@@ -1,0 +1,55 @@
+body {
+    margin:0;
+    font-family: 'Arial';
+    color:white;
+}
+
+canvas {
+    position:fixed;
+    top:0;
+    left:0;
+}
+
+main {
+    position:absolute;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 6rem;
+    margin-bottom: 1%;
+}
+
+header h2 {
+    font-size: 2.5rem;
+    margin-top: 1%;
+}
+
+section {
+    display:block;
+    margin:0 auto;
+
+    background-color: #0000006f;
+    border-radius: 2vh;
+    width: 30%;
+
+    padding:5vh;
+    
+    margin-left:5vh;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+
+    border:2px solid white;
+}
+
+section h3 {
+    text-align: center;
+    margin-top: 0;
+}
+section p {
+
+}
