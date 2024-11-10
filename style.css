@@ -1,55 +1,136 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Global Styles */
 body {
-    margin:0;
-    font-family: 'Arial';
-    color:white;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
+    overflow-x: hidden;
 }
 
 canvas {
-    position:fixed;
-    top:0;
-    left:0;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 main {
-    position:absolute;
+    position: absolute;
     width: 100%;
+    padding-bottom: 5vh;
 }
 
+/* Header Styles */
 header {
     text-align: center;
+    margin-top: 5vh;
+    color: #fff;
+    animation: neonGlow 0.5s infinite alternate;
 }
 
 header h1 {
-    font-size: 6rem;
-    margin-bottom: 1%;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8rem;
+    margin-bottom: 0;
 }
 
 header h2 {
-    font-size: 2.5rem;
-    margin-top: 1%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    margin-top: 0;
+    color: #d00df3;
+    text-shadow: 0 0 5px #fff;
 }
 
+/* Section Styles */
 section {
-    display:block;
-    margin:0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    margin: 10vh auto;
+    margin-left:2vh;
+    padding: 5vh;
+    border: 1px solid #d00df3;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
 
-    background-color: #0000006f;
-    border-radius: 2vh;
-    width: 30%;
-
-    padding:5vh;
-    
-    margin-left:5vh;
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-
-    border:2px solid white;
+section:hover {
+    border-color: #d00df3;
+    box-shadow: 0 0 30px #d00df39a;
 }
 
 section h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
     text-align: center;
     margin-top: 0;
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
 }
-section p {
 
+section div {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+section div::before {
+    content: "»";
+    position: absolute;
+    left: 0;
+    color: #ac07c9;
+    text-shadow: 0 0 5px #fff;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px #ac07c9, 0 0 20px #c208e3, 0 0 30px #d00df3;
+    }
+    to {
+        text-shadow: 0 0 20px #ac07c9, 0 0 30px #c208e3, 0 0 40px #d00df3;
+    }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0ff;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0cc;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 5rem;
+    }
+
+    header h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    section h3 {
+        font-size: 2.5rem;
+    }
 }
