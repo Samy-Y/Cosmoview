@@ -60,45 +60,7 @@ const mars = new Planet(6, "textures/mars.jpg", 0, new THREE.Color(0xffffff), 19
 const jupiter = new Planet(10, "textures/jupiter.jpg", 0, new THREE.Color(0xffffff), 220, -5, 200);
 const saturn = new Planet(9, "textures/saturn.jpg", 0, new THREE.Color(0xffffff), 270, -5, 230);
 
-function createSaturnRings() {
-    const ringTexture = new THREE.TextureLoader().load('textures/saturn_rings.png');
-    ringTexture.colorSpace = THREE.SRGBColorSpace;
-
-    const innerRadius = 30;
-    const outerRadius = 14;
-    const segments = 64;
-
-    const ringGeometry = new THREE.RingGeometry(innerRadius, outerRadius, segments);
-
-    // Correct UV mapping
-    const pos = ringGeometry.attributes.position;
-    const v3 = new THREE.Vector3();
-    const uv = ringGeometry.attributes.uv;
-    for (let i = 0; i < pos.count; i++) {
-        v3.fromBufferAttribute(pos, i);
-        uv.setXY(
-            i,
-            (v3.x / outerRadius + 1) / 2,
-            (v3.y / outerRadius + 1) / 2
-        );
-    }
-
-    const ringMaterial = new THREE.MeshBasicMaterial({
-        map: ringTexture,
-        side: THREE.DoubleSide,
-        transparent: true,
-        opacity: 0.8,
-    });
-
-    const ring = new THREE.Mesh(ringGeometry, ringMaterial);
-    ring.rotation.x = -Math.PI / 2;
-    ring.position.copy(saturn.getPlanet().position);
-    scene.add(ring);
-
-    // Rotate the rings with Saturn
-    saturn.ring = ring;
-}
-createSaturnRings();
+// i need to create saturn's rings
 
 const uranus = new Planet(8, "textures/uranus.jpg", 0, new THREE.Color(0xffffff), 305, -5, 260);
 uranus.getPlanet().rotation.z = THREE.MathUtils.degToRad(98);

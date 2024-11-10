@@ -86,3 +86,13 @@ footer p {
     color: #fff;
     text-align: center;
 }
+
+.warning {
+    font-size: 0.7rem;
+    color:red;
+    padding-left: 0;
+}
+
+.warning::before {
+    content:''
+}
